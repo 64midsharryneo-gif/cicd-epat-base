@@ -54,7 +54,21 @@ public class DataController {
                     .put("code", currency.code()));
         }
         return currencies;
+    }
 
+    @GetMapping("/persons")
+    public JsonNode getRandomPersons() {
+        log.info("Persons endpoint called");
+        var objectMapper = new ObjectMapper();
+        var faker = new Faker();
+        var persons = objectMapper.createArrayNode();
+        for (var i = 0; i < 10; i++) {
+            persons.add(objectMapper.createObjectNode()
+                    .put("firstName", faker.name().firstName())
+                    .put("lastName", faker.name().lastName())
+                    .put("id", faker.idNumber().valid()));
+        }
+        return persons;
     }
 
 }

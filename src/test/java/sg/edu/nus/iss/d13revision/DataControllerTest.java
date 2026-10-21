@@ -46,4 +46,11 @@ public class DataControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.length()").value(20));
     }
+
+    @Test
+    public void testGetRandomPersons() throws Exception {
+        mockMvc.perform(get("/persons"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.length()").value(10));
+    }
 }
