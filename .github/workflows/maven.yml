@@ -62,4 +62,4 @@ jobs:
         ignore-unfixed: false
         vuln-type: 'os,library'
         severity: 'CRITICAL,HIGH,MEDIUM'
-        trivyignores: '.trivyignore'
+        args: --ignorefile .trivyignore
