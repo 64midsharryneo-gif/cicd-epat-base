@@ -1,0 +1,3 @@
+# Ignore known/tracked vulnerabilities for this project
+# Add one CVE per line, for example:
+# CVE-2024-12345
